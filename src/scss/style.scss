@@ -65,6 +65,7 @@ nav i.fas {
 .main {
   background-image: url('img/highway.jpg');
   background-size: cover;
+  background-attachment: fixed;
   height: 50rem;
   display: flex;
   align-items: flex-start;
