@@ -158,10 +158,9 @@ h1 strong {
 
 .skillbox {
   box-sizing: border-box;
-  width: 100%;
   display: flex;
   padding: 1rem;
-  height: 4rem;
+  height: 3.5rem;
   align-items: center;
   margin: 1rem;
 }
@@ -170,80 +169,18 @@ h1 strong {
   min-width: 10%;
 }
 
-.chartNinety {
-  background-image: linear-gradient(to right, black, #8fc5cd);
-  border: 1px solid white;
-  width: 90%;
-  height: 3rem;
+.chart {
+  background-image: linear-gradient(to right, #8fc5cd, black);
+  height: 3.5rem;
+  border-right: 1px solid white;
 }
 
-.chartlevelNinety {
+.chartlevel {
   background-image: linear-gradient(to right, #eeae0a, black);
-  width: 10%;
-  padding: 1rem;
+  flex: 1;
   border: 1px solid white;
-  height: 1rem;
-}
-
-.chartEighty {
-  background-image: linear-gradient(to right, black, #8fc5cd);
-  border: 1px solid white;
-  width: 85%;
-  height: 3rem;
-}
-
-.chartlevelEighty {
-  background-image: linear-gradient(to right, #eeae0a, black);
-  width: 15%;
-  padding: 1rem;
-  border: 1px solid white;
-  height: 1rem;
-}
-
-.chartSeventy {
-  background-image: linear-gradient(to right, black, #8fc5cd);
-  border: 1px solid white;
-  width: 70%;
-  height: 3rem;
-}
-
-.chartlevelSeventy {
-  background-image: linear-gradient(to right, #eeae0a, black);
-  width: 30%;
-  padding: 1rem;
-  border: 1px solid white;
-  height: 1rem;
-}
-
-.chartSixty {
-  background-image: linear-gradient(to right, black, #8fc5cd);
-  border: 1px solid white;
-  width: 60%;
-  height: 3rem;
-}
-
-.chartlevelSixty {
-  background-image: linear-gradient(to right, #eeae0a, black);
-  width: 40%;
-  padding: 1rem;
-  border: 1px solid white;
-  height: 1rem;
-}
-
-.chartHundred {
-  background-image: linear-gradient(to right, black, #8fc5cd);
-  border: 1px solid white;
-  width: 100%;
-  height: 3rem;
-}
-
-.chartlevelHundred {
-  background-image: linear-gradient(to right, #eeae0a, black);
-  width: 0;
-  padding: 1rem;
-  border: 1px solid white;
-  height: 1rem;
-  display: none;
+  height: 3.5rem;
+  line-height: 3.5rem;
 }
 
 .skillinfo {
