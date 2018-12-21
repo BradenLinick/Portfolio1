@@ -6,12 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Martin Podloucký",
+  "author": "Braden Linick",
   "license": "ISC",
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-csso": "^3.0.1",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3"
   }
 }

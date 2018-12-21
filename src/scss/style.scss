@@ -1,3 +1,5 @@
+@import './node_modules/bootstrap/scss/bootstrap';
+
 $primary-color: #8fc5cd;
 $secondary-color: #eeae0a;
 
@@ -39,12 +41,14 @@ nav a:hover {
   text-align: center;
   width: 125px;
   margin: auto;
+  text-decoration: none;
+  color: white;
 }
 
 header img {
   width: 4rem;
   height: 4rem;
-  padding: .3rem 0 0 .3rem;
+  margin: .6rem 0 .6rem .6rem;
 }
 
 .burger {
@@ -157,13 +161,61 @@ h1 strong {
 
 /* My Skills */
 
+#skill {
+  list-style: none;
+  flex: 1;
+}
+
+#skill li {
+  margin-bottom: 70px;
+  background: #fff;
+  height: 5px;
+  border-radius: 3px;
+  border-left: 1px solid #111;
+  border-top: 1px solid #111;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.expand {
+  height: 5px;
+  margin: 2px 0;
+  background: $primary-color;
+  position: absolute;
+  box-shadow: 0px 0px 10px 1px rgba(0,198,255,0.4);
+}
+
+.html5 {
+  width: 70%;
+  -moz-animation: html5 2s ease-out;
+  -webkit-animation: html5 2s ease-out;
+}
+
+@-webkit-keyframes html5 {
+  0% {
+      width: 0px;
+  }
+
+  100% {
+      width: 70%;
+  };
+}
+
+@-moz-keyframes html5 {
+  0% {
+      width: 0px;
+  }
+
+  100% {
+      width: 70%;
+  };
+}
+
+/* */
+
 .skillbox {
   box-sizing: border-box;
   display: flex;
-  padding: 1rem;
-  height: 3.5rem;
-  align-items: center;
-  margin: 1rem;
 }
 
 .chart {
@@ -183,7 +235,7 @@ h1 strong {
 .skillinfo {
   padding-right: 5rem;
   margin-top: 1rem;
-  width: 3rem;
+  width: 13%;
 }
 
 .skillbox p {
@@ -219,64 +271,56 @@ h1 strong {
 .port {
   padding: 4rem 5rem 4rem 5rem;
   background-image: linear-gradient(black, #8fc5cd);
+  border: transparent;
 }
 
 .port h2 {
-  text-align: center;
   color: white;
   font-size: 36px;
 }
 
-.container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin: auto;
-  width: 100%;
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      transition: all 0.5s ease-out;
+    }
+  }
 }
 
-.framepage {
-  background-image: url('img/highway.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 21rem;
-  width: 21rem;
-  margin: 1rem;
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
 }
 
-.border:hover {
-  border: 2px solid white;
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
 }
 
-.frameinfo {
-  background: rgba(0,0,0,0.2);
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  height: 21rem;
-  width: 21rem;
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+  margin-top: .3rem;
 }
 
-.border {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  height: 21rem;
-  width: 21rem;
-  border: 2px solid transparent
-}
-
-.frameinfo p {
-  font-weight: 900;
-  color: #ffffff;
-}
-
-.frameinfo span {
-  color: #cfcfcf;
-  padding-top: 5px;
-}
 
 /* About Me */
 
@@ -340,14 +384,14 @@ h1 strong {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
-  margin-left: 5rem;
-  margin-right: 2rem;
+  margin-top: 1rem;
 }
 
 .inputs2 {
   margin-left: 2rem;
   display: flex;
   flex-flow: column wrap;
+  width: 50%;
 }
 
 .inputs2 label {
@@ -365,17 +409,14 @@ h1 strong {
   font-weight: bold;
 }
 
-textarea {
-  width: 20rem;
-}
-
 .inp {
   width: 10rem;
   background-color: black;
-  border: none;
-  margin: 1rem;
+  border: 1px solid rgba(255, 255, 255, .4);
+  margin: .5rem;
   font-size: 16px;
   color: white;
+  padding: .5rem;
 }
 
 label {
@@ -412,6 +453,10 @@ label {
 
 .talk span {
   padding: 1rem;
+}
+
+#copyright {
+  margin: 1rem 0 0 0;
 }
 
 /* Media Queries */
@@ -509,13 +554,19 @@ label {
     margin-bottom: 4rem;
   }
 
-  textarea {
-    width: 14.6rem;
+  .inputs2 {
+    width: 100%;
   }
-} 
 
-/*
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-@media screen and (min-width: 800px) and (max width: 1200px )
 
-*/
+}
+
+@media screen and (max-width: 500px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
